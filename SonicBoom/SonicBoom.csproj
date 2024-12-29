@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFrameworks>net8.0</TargetFrameworks>
-    <Version>1.0.2</Version>
     <Authors>Night Blade</Authors>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Description>A minimalistic audio library for .NET</Description>
@@ -14,6 +13,9 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>logo.png</PackageIcon>
+    <!-- removes useless <files> tag from the generated .nuspec -->
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <NuspecFile>SonicBoom.nuspec</NuspecFile>
   </PropertyGroup>
 
   <ItemGroup>

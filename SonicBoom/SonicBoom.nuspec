@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>SonicBoom</id>
+    <version>1.0.2</version>
+    <authors>Night Blade</authors>
+    <projectUrl>https://github.com/nightblade9/SonicBoom</projectUrl>
+    <description>A minimalistic audio library for .NET</description>
+    <tags>C# .NET audio sound</tags>
+    <repository type="git" url="https://github.com/nightblade9/SonicBoom" />
+    <dependencies>
+      <group targetFramework="net8.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\net8.0\*.dll" target="lib\net8.0" />
+  </files>
+</package>
