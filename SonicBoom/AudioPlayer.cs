@@ -1,14 +1,16 @@
 using System;
+using NAudio.Vorbis;
+using NAudio.Wave;
 
 namespace SonicBoom;
 
 public class AudioPlayer : IDisposable
 {
-    private WaveOutEvent _waveOutEvent;
+    private WaveOutEvent _waveOut;
 
     public AudioPlayer(string fileName)
     {
-        var reader = new VorbisWaveReader($fileName);
+        var reader = new VorbisWaveReader(fileName);
         _waveOut = new WaveOutEvent();
         _waveOut.Init(reader);
     }
