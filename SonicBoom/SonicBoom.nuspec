@@ -11,11 +11,10 @@
     <readme type="file">docs\README.md</readme>
     <repository type="git" url="https://github.com/nightblade9/SonicBoom" />
     <dependencies>
-      <group targetFramework="net8.0" />
+      <group targetFramework="net8.0">
+        <dependency id="NVorbis" version="0.10.5" />
+      </group>
     </dependencies>
-    <!-- <dependencies>
-      <dependency id="NVorbis" version="0.10.5" />
-    </dependencies> -->
   </metadata>
   <files>
     <file src="bin\Release\net8.0\*.dll" target="lib\net8.0" />
