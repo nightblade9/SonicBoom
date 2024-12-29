@@ -2,7 +2,7 @@
 
  NAudio does not include any visualization code in the core library, but it does provide access to the raw audio samples which you need to render wave-forms.
 
- NAudio does however provide a sample project at GitHub: [NAudio.WaveFormRenderer](https://github.com/naudio/NAudio.WaveFormRenderer) which makes use of `NAudio` and `System.Drawing` to render waveforms in a variety of styles.
+ NAudio does however provide a sample project at GitHub: [NAudio.WaveFormRenderer](https://github.com/nightblade9/SonicBoom.WaveFormRenderer) which makes use of `NAudio` and `System.Drawing` to render waveforms in a variety of styles.
 
 ![Orange Blocks](https://cloud.githubusercontent.com/assets/147668/18606778/5a9516ac-7cb1-11e6-8660-a0a80d72fe26.png)
 

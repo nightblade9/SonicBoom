@@ -115,7 +115,7 @@
 * WaveFileWriterRT for Win 8/10 (thanks to kamenlitchev)
 * Improvements to Mp3FileReader seeking and position reporting (thanks to protyposis)
 * updated NAudio build process to use FAKE, retiring the old MSBuild and IronPython scripts
-* NAudio.Wma project is moved out into its own [GitHub repository](https://github.com/naudio/NAudio.Wma)
+* NAudio.Wma project is moved out into its own [GitHub repository](https://github.com/nightblade9/SonicBoom.Wma)
 * ConcatenatingSampleProvider and FollowedBy extension method making it easy to concatenate Sample Providers
 * MixingSampleProvider raises events as inputs are removed and allows access to list of inputs
 * Improvements to MIDI event classes including clone support (thanks to Joseph Musser)

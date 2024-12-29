@@ -35,4 +35,4 @@ Because, as of 2025, there is no maintained cross-platform audio library that yo
 
 # Credits
 
-Special thanks to Mark Heath, the original author and maintainer of [NAudio](https://github.com/naudio/NAudio/).
+Special thanks to Mark Heath, the original author and maintainer of [NAudio](https://github.com/nightblade9/SonicBoom/).

@@ -6,19 +6,19 @@
     <AssemblyOriginatorKeyFile>..\NAudioStrongNameKey.snk</AssemblyOriginatorKeyFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Authors>Mark Heath</Authors>
-    <PackageProjectUrl>https://github.com/naudio/NAudio</PackageProjectUrl>
+    <Authors>Night Blade, Mark Heath</Authors>
+    <PackageProjectUrl>https://github.com/nightblade9/SonicBoom</PackageProjectUrl>
     <PackageTags>C# .NET audio sound</PackageTags>
-    <RepositoryUrl>https://github.com/naudio/NAudio</RepositoryUrl>
+    <RepositoryUrl>https://github.com/nightblade9/SonicBoom</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>2.2.1</Version>
+    <Version>1.0.0</Version>
     <PackageIcon>naudio-icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\NAudio.Core\NAudio.Core.csproj" />
     <ProjectReference Include="..\NAudio.Wasapi\NAudio.Wasapi.csproj" />
-    <ProjectReference Include="..\NAudio\NAudio.csproj" />
+    <ProjectReference Include="..\SonicBoom\SonicBoom.csproj" />
   </ItemGroup>
 
   <ItemGroup>
