@@ -7,8 +7,8 @@ if (-not $apiKey)
     throw "Need to set the API key first"
 }
 
-$packages = "NAudio.Core", "NAudio.Asio", "NAudio.WinForms", "NAudio.Midi", 
-            "NAudio.WinMM", "NAudio.Wasapi", "NAudio.Uap",
+$packages = "NAudio.Core", "NAudio.Asio", "NAudio.WinForms",
+            "NAudio.WinMM", "NAudio.Wasapi",
             "NAudio", "NAudio.Extras"
 
 foreach ($package in $packages)
