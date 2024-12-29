@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net8.0</TargetFrameworks>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Night Blade</Authors>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Description>A minimalistic audio library for .NET</Description>
@@ -17,7 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\naudio\NAudio.csproj" />
+    <ProjectReference Include="..\NAudio\NAudio.csproj" />
   </ItemGroup>
 
   <ItemGroup>
