@@ -1,3 +1,5 @@
+SonicBoom would not be possible without the amazing work that went into NAudio.
+
 NAudio is an open source .NET audio library written by Mark Heath (mark.heath@gmail.com)
 For more information, visit http://github.com/naudio/NAudio
 
