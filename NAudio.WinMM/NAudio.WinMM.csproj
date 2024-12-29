@@ -10,7 +10,7 @@
     <RepositoryUrl>https://github.com/nightblade9/SonicBoom</RepositoryUrl>
     
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageIcon>naudio-icon.png</PackageIcon>
+    <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
 
 	<!-- needed for perfomance profiling unit tests -->
@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\naudio-icon.png">
+    <None Include="..\logo.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
