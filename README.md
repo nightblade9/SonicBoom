@@ -14,7 +14,7 @@ Sonic Boom is a minimal, open-source, cross-platform .NET audio library created 
 
 ## Getting Started
 
-The easiest way to install Sonic Boom into your project is to clone this repository. In the future, you will be able to install the latest [NuGet package](https://www.nuget.org/packages/SonicBoom/). 
+The easiest way to install Sonic Boom into your project is to install the latest [NuGet package](https://www.nuget.org/packages/SonicBoom/). 
 
 ## Tutorials
 
