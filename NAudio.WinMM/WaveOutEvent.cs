@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
-using System.Runtime.InteropServices;
+using NAudio.Vorbis;
+using System.IO;
 
 // ReSharper disable once CheckNamespace
 namespace NAudio.Wave
@@ -23,6 +24,12 @@ namespace NAudio.Wave
         /// Indicates playback has stopped automatically
         /// </summary>
         public event EventHandler<StoppedEventArgs> PlaybackStopped;
+
+        /// <summary>
+        /// Should we loop playback continuously?
+        /// Only works with OGG files.
+        /// </summary>
+        public bool LoopPlayback { get; set; } = false;
 
         /// <summary>
         /// Gets or sets the desired latency in milliseconds
@@ -101,6 +108,8 @@ namespace NAudio.Wave
             {
                 buffers[n] = new WaveOutBuffer(hWaveOut, bufferSize, waveStream, waveOutLock);
             }
+
+            PlaybackStopped += RewindAndPlayIfLooping;
         }
 
         /// <summary>
@@ -350,6 +359,24 @@ namespace NAudio.Wave
                     syncContext.Post(state => handler(this, new StoppedEventArgs(e)), null);
                 }
             }
+        }
+
+        private void RewindAndPlayIfLooping(object? sender, StoppedEventArgs args)
+        {
+            if (!LoopPlayback)
+            {
+                return;
+            }
+
+            var vorbisWaveReader = waveStream as VorbisWaveReader;
+            if (vorbisWaveReader == null)
+            {
+                // Looping with non-OGGs isn't supported at this time.
+                return;
+            }
+            
+            vorbisWaveReader.Seek(0, SeekOrigin.Begin);
+            Play();
         }
     }
 }
