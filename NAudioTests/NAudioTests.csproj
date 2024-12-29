@@ -15,6 +15,6 @@
     <ProjectReference Include="..\NAudio.Core\NAudio.Core.csproj" />
     <ProjectReference Include="..\NAudio.Wasapi\NAudio.Wasapi.csproj" />
     <ProjectReference Include="..\NAudio.WinMM\NAudio.WinMM.csproj" />
-    <ProjectReference Include="..\SonicBoom\SonicBoom.csproj" />
+    <ProjectReference Include="..\NAudio\NAudio.csproj" />
   </ItemGroup>
 </Project>
