@@ -2,17 +2,25 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>SonicBoom</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <authors>Night Blade</authors>
     <projectUrl>https://github.com/nightblade9/SonicBoom</projectUrl>
     <description>A minimalistic audio library for .NET</description>
     <tags>C# .NET audio sound</tags>
+    <license type="file">docs\LICENSE</license>
+    <readme type="file">docs\README.md</readme>
     <repository type="git" url="https://github.com/nightblade9/SonicBoom" />
     <dependencies>
       <group targetFramework="net8.0" />
     </dependencies>
+    <!-- <dependencies>
+      <dependency id="NVorbis" version="0.10.5" />
+    </dependencies> -->
   </metadata>
   <files>
     <file src="bin\Release\net8.0\*.dll" target="lib\net8.0" />
+    <file src="bin\Release\net8.0\*.xml" target="lib\net8.0" />
+    <file src="..\LICENSE*" target="docs\" />
+    <file src="..\README.md" target="docs\" />
   </files>
 </package>
