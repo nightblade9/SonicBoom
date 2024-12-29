@@ -1,13 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <Version>1.0.0</Version>
+    <Authors>Night Blade</Authors>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Description>A minimalistic audio library for .NET</Description>
+    <PackageProjectUrl>https://github.com/nightblade9/SonicBoom</PackageProjectUrl>
+    <PackageTags>C# .NET audio sound</PackageTags>
+    <RepositoryUrl>https://github.com/nightblade9/SonicBoom</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>logo.png</PackageIcon>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\naudio\NAudio.csproj" />
   </ItemGroup>
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
