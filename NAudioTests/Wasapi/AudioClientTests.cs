@@ -34,6 +34,7 @@ namespace NAudioTests.Wasapi
         [Test]
         public void CanInitializeInExclusiveMode()
         {
+            /// Note: if this test fails, turn off any audio playing applications you have running, and try again.
             using (AudioClient audioClient = GetAudioClient())
             {
                 WaveFormat waveFormat = new WaveFormat(48000, 16, 2); //audioClient.MixFormat;
