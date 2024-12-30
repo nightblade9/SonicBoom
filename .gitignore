@@ -16,3 +16,8 @@ _ReSharper*/
 .fake/
 # cake:
 Tools/
+
+# SonarQube
+sonarToken.txt
+.sonarqube
+coverage.xml
