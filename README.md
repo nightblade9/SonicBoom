@@ -11,6 +11,7 @@ Sonic Boom is a cross-platform, minimal, open-source .NET audio library created 
   * WAV
   * OGG
   * MP3 (using ACM, DMO or MFT)
+* Loop OGG files
 
 ## Getting Started
 
