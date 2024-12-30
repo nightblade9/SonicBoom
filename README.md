@@ -1,6 +1,6 @@
-# Sonic Boom
+## Sonic Boom
 
-Sonic Boom is a minimal, open-source, cross-platform .NET audio library created to replace the no-longer-maintained NAudio, originally written by [Mark Heath](https://markheath.net).
+Sonic Boom is a cross-platform, minimal, open-source .NET audio library created to replace the no-longer-maintained [NAudio](https://github.com/naudio/NAudio).
 
 ## Features
 
@@ -25,14 +25,12 @@ The easiest way to install Sonic Boom into your project is to install the latest
 * [Playing Audio from a URL](Docs/PlayAudioFromUrl.md)
 * [Handling playback stopped](Docs/PlaybackStopped.md)
 * [Understanding WaveStream, IWavePlayer and ISampleProvider](Docs/WaveProviders.md)
-uture support requests and bug reports. Are you willing to stick around on the forums and help out people using it?
 
 ## FAQ
 
-### Why does this exist?
+**Q: Why does this exist?**
+**A:** Because, as of 2025, there is no maintained cross-platform audio library that you can use in .NET 8+ to play OGG files.
 
-Because, as of 2025, there is no maintained cross-platform audio library that you can use in .NET 8+ to play OGG files.
+## Credits
 
-# Credits
-
-Special thanks to Mark Heath, the original author and maintainer of [NAudio](https://github.com/naudio/NAudio).
+Special thanks to Mark Heath, the original author and maintainer of [NAudio](https://github.com/naudio/NAudio), and all the contributers.
