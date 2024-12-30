@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using NAudio.Wave;
 using System.Diagnostics;
-using Moq;
+using NSubstitute;
 
 namespace NAudioTests.WaveStreams
 {
@@ -24,35 +24,35 @@ namespace NAudioTests.WaveStreams
         [Test]
         public void ZeroOutputsShouldThrowException()
         {
-            var input1 = new Mock<IWaveProvider>();
-            Assert.Throws<ArgumentException>(() => new MultiplexingWaveProvider(new[] { input1.Object }, 0));
+            var input1 = Substitute.For<IWaveProvider>();
+            Assert.Throws<ArgumentException>(() => new MultiplexingWaveProvider(new[] { input1 }, 0));
         }
 
         [Test]
         public void InvalidWaveFormatShouldThowException()
         {
-            var input1 = new Mock<IWaveProvider>();
-            input1.Setup(x => x.WaveFormat).Returns(new Gsm610WaveFormat());
-            Assert.Throws<ArgumentException>(() => new MultiplexingWaveProvider(new[] { input1.Object }, 1));
+            var input1 = Substitute.For<IWaveProvider>();
+            input1.WaveFormat.Returns(new Gsm610WaveFormat());
+            Assert.Throws<ArgumentException>(() => new MultiplexingWaveProvider(new[] { input1 }, 1));
         }
 
         [Test]
         public void OneInOneOutShouldCopyWaveFormat()
         {
-            var input1 = new Mock<IWaveProvider>();
+            var input1 = Substitute.For<IWaveProvider>();
             var inputWaveFormat = new WaveFormat(32000, 16, 1);
-            input1.Setup(x => x.WaveFormat).Returns(inputWaveFormat);
-            var mp = new MultiplexingWaveProvider(new[] { input1.Object }, 1);
+            input1.WaveFormat.Returns(inputWaveFormat);
+            var mp = new MultiplexingWaveProvider(new[] { input1 }, 1);
             Assert.AreEqual(inputWaveFormat, mp.WaveFormat);
         }
 
         [Test]
         public void OneInTwoOutShouldCopyWaveFormatButBeStereo()
         {
-            var input1 = new Mock<IWaveProvider>();
+            var input1 = Substitute.For<IWaveProvider>();
             var inputWaveFormat = new WaveFormat(32000, 16, 1);
-            input1.Setup(x => x.WaveFormat).Returns(inputWaveFormat);
-            var mp = new MultiplexingWaveProvider(new[] { input1.Object }, 2);
+            input1.WaveFormat.Returns(inputWaveFormat);
+            var mp = new MultiplexingWaveProvider(new[] { input1 }, 2);
             var expectedOutputWaveFormat = new WaveFormat(32000, 16, 2);
             Assert.AreEqual(expectedOutputWaveFormat, mp.WaveFormat);
         }

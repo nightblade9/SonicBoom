@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using NAudioTests.Utils;
 using NUnit.Framework;
 using NAudio.Wave.SampleProviders;
 using NAudio.Wave;
 using System.Diagnostics;
-using Moq;
+using NSubstitute;
 
 namespace NAudioTests.WaveStreams
 {
@@ -28,35 +26,35 @@ namespace NAudioTests.WaveStreams
         [Test]
         public void ZeroOutputsShouldThrowException()
         {
-            var input1 = new Mock<ISampleProvider>();
-            Assert.Throws<ArgumentException>(() => new MultiplexingSampleProvider(new ISampleProvider[] { input1.Object }, 0));
+            var input1 = Substitute.For<ISampleProvider>();
+            Assert.Throws<ArgumentException>(() => new MultiplexingSampleProvider(new ISampleProvider[] { input1 }, 0));
         }
 
         [Test]
         public void InvalidWaveFormatShouldThowException()
         {
-            var input1 = new Mock<ISampleProvider>();
-            input1.Setup(x => x.WaveFormat).Returns(new WaveFormat(32000, 16, 1));
-            Assert.Throws<ArgumentException>(() => new MultiplexingSampleProvider(new ISampleProvider[] { input1.Object }, 1));
+            var input1 = Substitute.For<ISampleProvider>();
+            input1.WaveFormat.Returns(new WaveFormat(32000, 16, 1));
+            Assert.Throws<ArgumentException>(() => new MultiplexingSampleProvider(new ISampleProvider[] { input1 }, 1));
         }
 
         [Test]
         public void OneInOneOutShouldCopyWaveFormat()
         {
-            var input1 = new Mock<ISampleProvider>();
+            var input1 = Substitute.For<ISampleProvider>();
             var inputWaveFormat = WaveFormat.CreateIeeeFloatWaveFormat(32000, 1);
-            input1.Setup(x => x.WaveFormat).Returns(inputWaveFormat);
-            var mp = new MultiplexingSampleProvider(new ISampleProvider[] { input1.Object }, 1);
+            input1.WaveFormat.Returns(inputWaveFormat);
+            var mp = new MultiplexingSampleProvider(new ISampleProvider[] { input1 }, 1);
             Assert.AreEqual(inputWaveFormat, mp.WaveFormat);
         }
 
         [Test]
         public void OneInTwoOutShouldCopyWaveFormatButBeStereo()
         {
-            var input1 = new Mock<ISampleProvider>();
+            var input1 = Substitute.For<ISampleProvider>();
             var inputWaveFormat = WaveFormat.CreateIeeeFloatWaveFormat(32000, 1);
-            input1.Setup(x => x.WaveFormat).Returns(inputWaveFormat);
-            var mp = new MultiplexingSampleProvider(new ISampleProvider[] { input1.Object }, 2);
+            input1.WaveFormat.Returns(inputWaveFormat);
+            var mp = new MultiplexingSampleProvider(new ISampleProvider[] { input1 }, 2);
             var expectedOutputWaveFormat = WaveFormat.CreateIeeeFloatWaveFormat(32000, 2);
             Assert.AreEqual(expectedOutputWaveFormat, mp.WaveFormat);
         }
