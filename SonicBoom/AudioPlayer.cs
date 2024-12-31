@@ -10,16 +10,23 @@ namespace SonicBoom;
 /// </summary>
 public class AudioPlayer : IDisposable
 {
+    /// <summary>
+    /// An event that fires when playback automatically completes.
+    /// Does not fire if you call Stop or Pause.
+    /// </summary>
+    public event Action OnPlaybackComplete;
+    
     private WaveOutEvent _waveOut;
 
     /// <summary>
     /// Create a new audio player, and load the audio file specified.
     /// </summary>
-    public AudioPlayer(string fileName)
+    public void Load(string fileName)
     {
         var reader = new VorbisWaveReader(fileName);
         _waveOut = new WaveOutEvent();
         _waveOut.Init(reader);
+        _waveOut.PlaybackStopped += (sender, stoppedArgs) => OnPlaybackComplete?.Invoke();
     }
 
     /// <summary>
