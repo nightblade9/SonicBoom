@@ -14,8 +14,14 @@ public class AudioPlayer : IDisposable
     /// <summary>
     /// An event that fires when playback automatically completes.
     /// Does not fire if you call Stop or Pause.
+    /// If LoopPlayback is true, this fires on every loop.
     /// </summary>
     public event Action OnPlaybackComplete;
+
+    /// <summary>
+    /// Set to true to loop playback.
+    /// </summary>
+    public bool LoopPlayback { get; set; }
     
     private WaveOutEvent _waveOut;
     private VorbisWaveReader _reader;
@@ -28,16 +34,16 @@ public class AudioPlayer : IDisposable
         _reader = new VorbisWaveReader(fileName);
         _waveOut = new WaveOutEvent();
         _waveOut.Init(_reader);
-        _waveOut.PlaybackStopped += (sender, stoppedArgs) => OnPlaybackComplete?.Invoke();
-    }
+        _waveOut.PlaybackStopped += (sender, stoppedArgs) => 
+        {
+            OnPlaybackComplete?.Invoke();
+            if (!LoopPlayback)
+            {
+                return;
+            }
 
-    /// <summary>
-    /// True if playback should immediately loop once complete.
-    /// </summary>
-    public bool LoopPlayback
-    {
-        get { return _waveOut.LoopPlayback; }
-        set { _waveOut.LoopPlayback = value; }
+            Play();
+        };
     }
 
     /// <summary>
