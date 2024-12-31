@@ -29,10 +29,23 @@ These are all original NAudio tutorials.
 * [Handling playback stopped](Docs/PlaybackStopped.md)
 * [Understanding WaveStream, IWavePlayer and ISampleProvider](Docs/WaveProviders.md)
 
+## Contributing
+
+### Architectural Goals
+
+The technical goals of Sonic Boom are:
+
+- Maintain as minimal a version of NAudio as we can
+- Keep up to date with NAudio, including new versions and PRs/fixes
+- Try to keep the included NAudio as close to the upstream version as we can
+- Make changes to the SonicBoom layer as much as possible
+
+ e.g. if we want to implement looped playback, we'll implement it in `SonicBoom`, not `NAudio`.
+
 ## FAQ
 
-**Q: Why does this exist?**
-**A:** Because, as of 2025, there is no maintained cross-platform audio library that you can use in .NET 8+ to play OGG files. I'm not an audio expert by any means; the .NET community needs to pick up where NAudio left off.
+### Q: Why does this exist?
+As of 2025, there is no actively-maintained cross-platform audio library that you can use in .NET 8+ to play OGG files. I'm not an audio expert by any means; the .NET community needs to pick up where NAudio left off.
 
 ## Credits
 
