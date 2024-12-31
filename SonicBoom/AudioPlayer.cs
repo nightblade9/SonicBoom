@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using NAudio.Vorbis;
 using NAudio.Wave;
 
@@ -17,15 +18,16 @@ public class AudioPlayer : IDisposable
     public event Action OnPlaybackComplete;
     
     private WaveOutEvent _waveOut;
+    private VorbisWaveReader _reader;
 
     /// <summary>
     /// Create a new audio player, and load the audio file specified.
     /// </summary>
     public void Load(string fileName)
     {
-        var reader = new VorbisWaveReader(fileName);
+        _reader = new VorbisWaveReader(fileName);
         _waveOut = new WaveOutEvent();
-        _waveOut.Init(reader);
+        _waveOut.Init(_reader);
         _waveOut.PlaybackStopped += (sender, stoppedArgs) => OnPlaybackComplete?.Invoke();
     }
 
@@ -50,7 +52,11 @@ public class AudioPlayer : IDisposable
     /// <summary>
     /// Plays the audio file.
     /// </summary>
-    public void Play() => _waveOut.Play();
+    public void Play()
+    {
+        _reader.Seek(0, SeekOrigin.Begin);
+        _waveOut.Play();
+    }
 
     /// <summary>
     /// Stops audio playback.
@@ -65,6 +71,7 @@ public class AudioPlayer : IDisposable
         if (disposing)
         {
             _waveOut?.Dispose();
+            _reader?.Dispose();
         }
     }
 
