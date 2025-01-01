@@ -28,8 +28,4 @@
     <None Include="..\logo.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="nsubst\" />
-  </ItemGroup>
-
 </Project>

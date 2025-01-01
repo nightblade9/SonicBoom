@@ -31,6 +31,16 @@ public class AudioPlayer : IDisposable
     /// </summary>
     public void Load(string fileName)
     {
+        if (_waveOut != null)
+        {
+            _waveOut.Dispose();
+        }
+
+        if (_reader != null)
+        {
+            _reader.Dispose();
+        }
+        
         _reader = new VorbisWaveReader(fileName);
         _waveOut = new WaveOutEvent();
         _waveOut.Init(_reader);
