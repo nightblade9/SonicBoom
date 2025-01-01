@@ -5,6 +5,7 @@ using NUnit.Framework;
 using System.IO;
 using NAudio.Wave;
 using System.Diagnostics;
+using System.Linq;
 
 namespace NAudioTests.Aiff
 {
@@ -15,19 +16,20 @@ namespace NAudioTests.Aiff
         [Category("IntegrationTest")]
         public void ConvertAiffToWav()
         {
-            string testFolder = @"C:\Users\Mark\Downloads\NAudio";
-            if (!Directory.Exists(testFolder))
-            {
-                Assert.Ignore("{0} not found", testFolder);
-            }
+            // Arrange is done outside: popualting test data
+            string testFolder = @"TestData";
+            var aiffFiles = Directory.GetFiles(testFolder, "*.aiff");
+            Assert.That(aiffFiles.Any());
 
-            foreach (string file in Directory.GetFiles(testFolder, "*.aiff"))
+            foreach (string file in aiffFiles)
             {
                 string baseName=  Path.GetFileNameWithoutExtension(file);
-                string wavFile = Path.Combine(testFolder, baseName + ".wav");
-                string aiffFile = Path.Combine(testFolder, file);
+                string wavFile = Path.Combine(testFolder, $"{baseName}.wav");
+                string aiffFile = Path.Combine(file);
                 Debug.WriteLine(String.Format("Converting {0} to wav", aiffFile));
-                ConvertAiffToWav(aiffFile, wavFile);
+
+                // Act/Assert: does not throw
+                Assert.DoesNotThrow(() => ConvertAiffToWav(aiffFile, wavFile));
             }
         }
 
