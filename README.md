@@ -1,6 +1,8 @@
 ## Sonic Boom
 
-Sonic Boom is a cross-platform, minimal, open-source .NET audio library created as a lightweight replacement for the fantastic but no-longer-maintained [NAudio](https://github.com/naudio/NAudio). The goal is to foster a community project, so those of us who depend on this library can keep improving it.
+Sonic Boom is a cross-platform, minimal **community-driven fork** of [NAudio](https://github.com/naudio/NAudio). The goal is to foster a community around the fork and maintain it together. The focus of the fork is audio playback, not audio mixing, conversion, visualization, or any other functionality.
+
+That said, the fork currently supports re-encoding and audio format conversion; there are no plans to remove this functionality, either.
 
 ## Features
 
