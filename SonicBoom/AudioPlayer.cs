@@ -89,7 +89,11 @@ public class AudioPlayer : IDisposable
     /// <summary>
     /// Stops audio playback.
     /// </summary>
-    public void Stop() => _waveOut.Pause(); // WaveOutEvent.Stop doesn't work ...
+    public void Stop()
+    {
+        LoopPlayback = false;
+        _waveOut.Stop();
+    }
 
     /// <summary>
     /// Disposes necessary resources.
