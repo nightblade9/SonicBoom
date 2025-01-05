@@ -24,7 +24,7 @@ public class AudioPlayer : IDisposable
     public bool LoopPlayback { get; set; }
     
     private WaveOutEvent _waveOut;
-    private VorbisWaveReader _reader;
+    private WaveStream _reader;
 
     /// <summary>
     /// Create a new audio player, and load the audio file specified.
@@ -41,7 +41,19 @@ public class AudioPlayer : IDisposable
             _reader.Dispose();
         }
         
-        _reader = new VorbisWaveReader(fileName);
+        var fileExtension = fileName.Substring(fileName.LastIndexOf('.') + 1).ToLower();
+        switch (fileExtension)
+        {
+            case "ogg":
+                _reader = new VorbisWaveReader(fileName);
+                break;
+            case "wav":
+                _reader = new WaveFileReader(fileName);
+                break;
+            default:
+                throw new ArgumentException($"Not sure how to play {fileExtension} files");
+        }
+
         _waveOut = new WaveOutEvent();
         _waveOut.Init(_reader);
         _waveOut.PlaybackStopped += (sender, stoppedArgs) => 
