@@ -1,8 +1,8 @@
 ## Sonic Boom
 
-Sonic Boom is a cross-platform, minimal **community-driven fork** of [NAudio](https://github.com/naudio/NAudio). The goal is to foster a community around the fork and maintain it together. The focus of the fork is audio playback, not audio mixing, conversion, visualization, or any other functionality.
+Sonic Boom is a minimal, **community-driven fork** of [NAudio](https://github.com/naudio/NAudio). The goal is for the community to handle ongoing extension and maintenance for this project, which is too much for any one person to handle.
 
-That said, the fork currently supports re-encoding and audio format conversion; there are no plans to remove this functionality, either.
+This fork focuses mainly on playback. The extra project, `SonicBoom`, contains an `AudioPlayer` class that makes it easier to consume.
 
 ## Features
 
@@ -37,12 +37,13 @@ These are all original NAudio tutorials.
 
 The technical goals of Sonic Boom are:
 
-- Maintain as minimal a version of NAudio as we can
-- Keep up to date with NAudio, including new versions and PRs/fixes
+- Maintain as minimal a version of NAudio as we can get away with
+- Keep up to date with NAudio, including new versions and PRs and fixes
 - Try to keep the included NAudio as close to the upstream version as we can
-- Make changes to the SonicBoom layer as much as possible
+- Make changes to the `SonicBoom` layer as much as possible
+- Modernize, e.g. better automated testing
 
- e.g. if we want to implement looped playback, we'll implement it in `SonicBoom`, not `NAudio`.
+For example, if we want to implement looped playback, we'll implement it in `AudioPlayer`, not `NAudio`.
 
 ## FAQ
 
@@ -51,4 +52,4 @@ As of 2025, there is no actively-maintained cross-platform audio library that yo
 
 ## Credits
 
-Special thanks to Mark Heath, the original author and maintainer of [NAudio](https://github.com/naudio/NAudio), and all the contributers.
+Special thanks to Mark Heath, the original author and maintainer of [NAudio](https://github.com/naudio/NAudio), and all the original and ongoing contributers.
