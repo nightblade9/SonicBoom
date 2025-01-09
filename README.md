@@ -2,7 +2,7 @@
 
 Sonic Boom is a minimal, **community-driven fork** of [NAudio](https://github.com/naudio/NAudio). The goal is for the community to handle ongoing extension and maintenance for this project, which is too much for any one person to handle.
 
-This fork focuses mainly on playback. The extra project, `SonicBoom`, contains an `AudioPlayer` class that makes it easier to consume.
+This fork focuses mainly on playback.
 
 ## Features
 
@@ -39,16 +39,14 @@ The technical goals of Sonic Boom are:
 
 - Maintain as minimal a version of NAudio as we can get away with
 - Keep up to date with NAudio, including new versions and PRs and fixes
-- Try to keep the included NAudio as close to the upstream version as we can
-- Make changes to the `SonicBoom` layer as much as possible
 - Modernize, e.g. better automated testing
-
-For example, if we want to implement looped playback, we'll implement it in `AudioPlayer`, not `NAudio`.
 
 ## FAQ
 
 ### Q: Why does this exist?
 As of 2025, there is no actively-maintained cross-platform audio library that you can use in .NET 8+ to play OGG files. I'm not an audio expert by any means; the .NET community needs to pick up where NAudio left off.
+
+While I cannot possibly maintain this myself due to lack of expertise, I am confident that there are enough interested users in the community who can pool together and make this work.
 
 ## Credits
 
