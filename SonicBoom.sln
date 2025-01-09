@@ -62,6 +62,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NAudio.Core", "NAudio.Core\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAudio.Vorbis", "NAudio.Vorbis\NAudio.Vorbis.csproj", "{4F0CC68A-F8B3-49E9-81CC-72D2FD921DE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SonicBoom", "SonicBoom\SonicBoom.csproj", "{C7E83F7B-2775-4842-9BB9-400CA2D1BDEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -148,6 +150,18 @@ Global
 		{4F0CC68A-F8B3-49E9-81CC-72D2FD921DE9}.Release|x64.Build.0 = Release|Any CPU
 		{4F0CC68A-F8B3-49E9-81CC-72D2FD921DE9}.Release|x86.ActiveCfg = Release|Any CPU
 		{4F0CC68A-F8B3-49E9-81CC-72D2FD921DE9}.Release|x86.Build.0 = Release|Any CPU
+		{C7E83F7B-2775-4842-9BB9-400CA2D1BDEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7E83F7B-2775-4842-9BB9-400CA2D1BDEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7E83F7B-2775-4842-9BB9-400CA2D1BDEA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C7E83F7B-2775-4842-9BB9-400CA2D1BDEA}.Debug|x64.Build.0 = Debug|Any CPU
+		{C7E83F7B-2775-4842-9BB9-400CA2D1BDEA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C7E83F7B-2775-4842-9BB9-400CA2D1BDEA}.Debug|x86.Build.0 = Debug|Any CPU
+		{C7E83F7B-2775-4842-9BB9-400CA2D1BDEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E83F7B-2775-4842-9BB9-400CA2D1BDEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7E83F7B-2775-4842-9BB9-400CA2D1BDEA}.Release|x64.ActiveCfg = Release|Any CPU
+		{C7E83F7B-2775-4842-9BB9-400CA2D1BDEA}.Release|x64.Build.0 = Release|Any CPU
+		{C7E83F7B-2775-4842-9BB9-400CA2D1BDEA}.Release|x86.ActiveCfg = Release|Any CPU
+		{C7E83F7B-2775-4842-9BB9-400CA2D1BDEA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <Authors>Night Blade</Authors>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Description>A minimalistic audio library for .NET</Description>
+    <PackageProjectUrl>https://github.com/nightblade9/SonicBoom</PackageProjectUrl>
+    <PackageTags>C# .NET audio sound</PackageTags>
+    <RepositoryUrl>https://github.com/nightblade9/SonicBoom</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>logo.png</PackageIcon>
+    <!-- removes useless <files> tag from the generated .nuspec -->
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <NuspecFile>SonicBoom.nuspec</NuspecFile>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\NAudio\NAudio.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\LICENSE" Pack="true" PackagePath="\" />
+    <None Include="..\logo.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+</Project>
