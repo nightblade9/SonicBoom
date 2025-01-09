@@ -92,7 +92,7 @@ public class AudioPlayer : IDisposable
     public void Stop()
     {
         LoopPlayback = false;
-        _waveOut.Stop();
+        _waveOut?.Stop();
     }
 
     /// <summary>
